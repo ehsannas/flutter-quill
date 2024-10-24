@@ -54,6 +54,19 @@ class QuillEditorImageEmbedBuilder extends EmbedBuilder {
         QuillSharedExtensionsConfigurations.get(context: context)
             .imageSaverService;
     return GestureDetector(
+      onLongPress: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ImageTapWrapper(
+              imageUrl: imageSource,
+              assetsPrefix: "",
+              configurations: configurations,
+            ),
+          ),
+        );
+      },
+      /*
       onTap: () {
         final onImageClicked = configurations.onImageClicked;
         if (onImageClicked != null) {
@@ -75,6 +88,7 @@ class QuillEditorImageEmbedBuilder extends EmbedBuilder {
           ),
         );
       },
+      */
       child: Builder(
         builder: (context) {
           if (margin != null) {
