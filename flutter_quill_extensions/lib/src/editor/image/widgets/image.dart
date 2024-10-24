@@ -51,9 +51,9 @@ ImageProvider getImageProviderByImageSource(
     return NetworkImage(imageSource);
   }
 
-  if (imageSource.startsWith(assetsPrefix)) {
-    return AssetImage(imageSource);
-  }
+  //if (imageSource.startsWith(assetsPrefix)) {
+  //  return AssetImage(imageSource);
+  //}
 
   // File image
   if (kIsWeb) {
